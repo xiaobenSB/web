@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width,minimal-ui">
+<style>
+html,body{ height:100%}
+</style>
+</head>
+<body>
+
+<div>
+<p class="iconeye">wwwww</p>
+<span class="a">0pppppppppppppppppppppppppppppppppppppppppppppppppppp</span>
+
+</div>
+
+<div>
+<p class="iconeye">wwwww</p>
+<span class="a">1pppppppppppppppppppppppppppppppppppppppppppppppppppp</span>
+
+</div>
+
+<div>
+<p class="iconeye">wwwww</p>
+<span class="a">2pppppppppppppppppppppppppppppppppppppppppppppppppppp</span>
+
+</div>
+<div>
+<iframe name="ifa" id="if" src="/a"   onload="document.getElementById('if').style.height = ifa.document.body.scrollHeight+25+'px'">   <!-- iframe高度自适应，注意：ifa.document跨域下不能使用 -->
+
+</iframe>
+
+</div>
+<script>
+ 
+
+
+
+
+function a(){
+var p = document.getElementsByClassName('iconeye');
+
+for(var i = 0,len = p.length; i<len; i++){
+   
+   p[i].flag = true;
+   p[i].onclick = function(){
+		
+		 this.flag === true ? this.nextElementSibling.style.display = 'none' :  this.nextElementSibling.style.display = 'block';
+		  this.flag = !this.flag;
+  }
+}
+}
+a();
+
+var ab = async function(){  await new Promise(function(rs,re){ setTimeout(()=>{console.log(1);rs()},1000);  }) ;console.log(20)};ab()
+</script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿<!DOCTYPE html>
+<html>
+<style>
+*{ margin:0;padding:0 }
+p:after{
+   display:block;
+   content:"";
+   width:1px;
+   height:40px;
+   background-color:#ccc;
+   margin-left:10px;
+}
+#text .a:after{
+   position:absolute;
+   top:0;
+   left:-30px;
+   content:"";
+   width:0;
+   height:0;
+   border-left:15px solid transparent;
+   border-top:15px solid transparent;
+   border-bottom:15px solid transparent;
+   border-right:15px solid blue;
+}
+</style>
+<body>
+<div id="text">
+<p>
+<span style="display:inline-block;width:30px; height:30px; border-radius:50%;background-color:red;text-align:center">1</span>
+<span class="a"  style="position:relative;display:inline-block;margin-left:20px;width:550px;height:30px;background-color:blue;color:#fff">我是一个懒泥</span>
+</p>
+<p>
+<span style="display:inline-block;width:30px; height:30px; border-radius:50%;background-color:red;text-align:center">2</span>
+<span class="a" style="position:relative;display:inline-block;margin-left:20px;width:550px;height:30px;background-color:blue;color:#fff">我是一个懒泥</span>
+</p>
+<p>
+<span style="display:inline-block;width:30px; height:30px; border-radius:50%;background-color:red;text-align:center">3</span>
+<span class="a" style="position:relative;display:inline-block;margin-left:20px;width:550px;height:30px;background-color:blue;color:#fff">我是一个懒泥</span>
+</p>
+<div>
+<span style="display:inline-block;width:30px; height:30px; border-radius:50%;background-color:red;text-align:center">4</span>
+<span class="a" style="position:relative;display:inline-block;margin-left:20px;width:550px;height:30px;background-color:blue;color:#fff">我是一个懒泥</span>
+</div>
+</div>
+
+  <script>
+
+  </script>
+</body>
+</html>
