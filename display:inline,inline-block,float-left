@@ -1,0 +1,7 @@
+display:inline 可以把块级元素变为内联元素（如div变为span,不能使用宽高属性）<br/>
+<br/>
+display:inline-block 可以把块级元素变为内联元素（可以使用宽高，所以内联元素想有宽高也可以使用，但是同级使用之间有间隔）<br/>
+<br/>
+float:left 可以把块级元素变为内联元素(可以使用宽高，没有间隙）<br/>
+<br/>
+display:inline和display:inline-block还会帮你清除li的小黑点,float-left不会
