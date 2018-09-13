@@ -1,7 +1,13 @@
-display:inline 可以把块级元素变为内联元素（如div变为span,不能使用宽高属性）<br/>
-<br/>
-display:inline-block 可以把块级元素变为内联元素（可以使用宽高，所以内联元素想有宽高也可以使用，但是同级使用之间有间隔）<br/>
-<br/>
-float:left 可以把块级元素变为内联元素(可以使用宽高，没有间隙）<br/>
-<br/>
-display:inline和display:inline-block还会帮你清除li的小黑点,float-left不会
+display:inline 可以把块级元素变为内联元素（如div变为span,不能使用宽高属性,但是同级之间使用会有间隔）
+
+display:inline-block 可以把块级元素变为内联元素（可以使用宽高，所以内联元素想有宽高也可以使用，但是同级之间使用会有间隔）
+
+float:left 可以把块级元素变为内联元素(可以使用宽高，没有间隙）
+
+
+
+
+display:inline和display:inline-block还会帮你清除li的小黑点,float:left不会
+
+注意 ：float:left 如果当前使用的宽度不够100%，那么它就会影响接下来宽度够的标签，如float-left标签的宽度70%，接下来的块级标签20%就会排到70%后面，
+35%的话就不会，清除浮动也不会
