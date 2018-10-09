@@ -26,10 +26,10 @@
                 xhr.onload = function () {
                     if (xhr.status === 200 || xhr.status === 304) {
                         // 将后台 buffer 转换为 blob
-                        /*注意后台buffer被new Int8Array（buffer）处理了
+                        /*注意后台buffer被new Int8Array（buffer）处理返回为类型化数组（Uint8Array（buffer）也是返回类型化数组）
                           也就是 new Int8Array（后台buffer数据）后为 xhr.response
                         */
-                        let blob = new Blob([xhr.response], { type: 'video/*' })
+                        let blob = new Blob([xhr.response], { type: 'video/*' })  //new Blob(["typedArray--->类型化数组"], {type:"xxxx"});
                         // 创建blob链接
                         video.src = URL.createObjectURL(blob); //每次创建生成都不一样 URL.revokeObjectURL(blob连接)  blob:https://localhost/86ba5a54-673d-426b-99fe-984e1e49428c
                         console.log(blob)  
