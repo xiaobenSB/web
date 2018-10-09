@@ -26,10 +26,19 @@
                 xhr.onload = function () {
                     if (xhr.status === 200 || xhr.status === 304) {
                         // 将后台 buffer 转换为 blob
+                        /*注意后台buffer被new Int8Array（buffer）处理了
+                          也就是 new Int8Array（后台buffer数据）后为 xhr.response
+                        */
                         let blob = new Blob([xhr.response], { type: 'video/*' })
                         // 创建blob链接
                         video.src = URL.createObjectURL(blob); //每次创建生成都不一样 URL.revokeObjectURL(blob连接)
-                        console.log(blob)
+                        console.log(blob)  
+                        
+                        /*Blob(318465) {size: 318465, type: "video"}
+                           size: 318465
+                           type: "video"
+                          __proto__: Blob*/
+                          
                     }
                 }
                 xhr.send()
