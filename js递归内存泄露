@@ -39,7 +39,7 @@ function trampoline () {
 console.log(trampoline());
 
 2.
-var num = 1000000000;
+var num = 100000000;
 function trampoline () { num = Math.abs(num) -2;
    if (num === 0) {
         alert(1);return false;
@@ -49,4 +49,6 @@ function trampoline () { num = Math.abs(num) -2;
 
 }
 //Outputs: true
-while(num!=0){ trampoline() };
+var a = null;  
+while(num!=0){ a = trampoline() ;a = null; };  
+//a = null是为了避免每次执行方法所产生的内存储存在全局没法自动清理掉，应该是执行的方法不被变量指向所在内存地址的话默认会被全局指向，导致js无法自动清理
