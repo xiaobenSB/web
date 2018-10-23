@@ -49,6 +49,6 @@ function trampoline () { num = Math.abs(num) -2;
 
 }
 //Outputs: true
-var a = null;  
-while(num!=0){ a = trampoline() ;a = null; };  
-//a = null是为了避免每次执行方法所产生的内存储存在全局没法自动清理掉，应该是执行的方法不被变量指向所在内存地址的话默认会被全局指向，导致js无法自动清理
+
+while(num!=0){ trampoline() ; };  
+//在全局执行的方法所产生的内存（全局内存很大很难大过全局内存的大小） 在一个局部内心执行的方法所产生的内存（局部内存是有限制的）
