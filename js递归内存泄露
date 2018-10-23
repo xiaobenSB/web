@@ -19,7 +19,7 @@ console.log(isEven(1000000));
 1.
 function isEven (num) {
     if (num === 0) {
-        i=true;return true;
+        return true;
     }
     if (num === 1) {
         return false;
@@ -29,9 +29,9 @@ function isEven (num) {
     }
 };
 function trampoline () {
-    var value = isEven(100000000);var i = 1;
-    while( i === 1) {
-         value();
+    var value = isEven(100000000);
+    while( typeof value === 'function') {
+         value = value();
     }
     return value;
 }
