@@ -1,3 +1,23 @@
+栈(stack)会自动分配内存空间，会自动释放。堆(heap)动态分配的内存，大小不定也不会自动释放。
+
+var a = [1,0,9,8,7];
+   var b = a;
+   var c = a[0];
+   console.log(b);     //[1,0,9,8,7]
+   console.log(c);     //1
+   //改变数值
+   b[1] = 3;
+   c = 5;
+   console.log(b[1]);  //3
+   console.log(a[0]);  //1      
+
+因为a是数组，是引用类型，赋给b的时候传的是栈中的地址，不是堆内存中的对象，c仅仅是从a堆内存中获取的一个数据值，并保存在栈中，所以b修改的时候，
+会根据地址回到a堆中修改，c则直接在栈中修改，并且不能指向a堆内存中。
+--------------------- 
+
+原文：https://blog.csdn.net/lwang_hello/article/details/79357580 
+
+
 内存泄露列子：
 
 function isEven (num) {
