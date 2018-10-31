@@ -1,0 +1,38 @@
+每瓶啤酒2元，2个空酒瓶或4个瓶盖可换1瓶啤酒。10元最多可喝多少瓶啤酒？
+
+1瓶的酒 未拿来兑换  == 1个空瓶 == 1个瓶盖
+喝多少 == 喝了多少瓶水 不是实物 所以瓶子会慢慢变没
+
+
+function a(money){   //思路： 酒瓶计算酒瓶 瓶盖计算瓶盖的 ，各个兑换的酒再给兑换剩余的酒瓶和瓶盖加上兑换 ， 酒的总数 = 先买的 + 兑换出来的
+ 
+  var total_beer = 0;
+  var first_round_num = ~~(money / 2) ; //取整防止出现money为15时，结果为7.5
+  var total_beer = +first_round_num; //酒
+  
+  var bottle_num = first_round_num;  //空瓶
+  var cap_num = first_round_num;  //空瓶对应几个瓶盖
+
+  while((bottle_num >= 2) || (cap_num >= 4)){ 
+     var  exchange_bottle = ~~(bottle_num / 2);     //也是取整防止出现小数点
+     var  exchange_cap    = ~~(cap_num / 4);   
+     var  residual_bottle = bottle_num % 2;   //取余计算可以求出除去兑换酒的空瓶瓶还剩多少空瓶
+     var  residual_cap = cap_num % 4;
+     
+      console.log(bottle_num,  cap_num );
+      
+     total_beer = total_beer + exchange_bottle + exchange_cap;    //加等上兑换出来的酒 
+    bottle_num = residual_bottle + exchange_bottle + exchange_cap;   //空瓶加上兑换的酒
+     cap_num = residual_cap + exchange_bottle + exchange_cap;
+
+   };
+   
+  return total_beer;
+
+};alert(a(10))  // 15瓶
+
+5 5   --> 2 1
+4 4   --> 2 1 
+3 3   --> 1 0       --------------> 7 + 3 + 5 = 15
+2 4   --> 1 1
+2 2   --> 1 0  
