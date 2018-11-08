@@ -1,4 +1,4 @@
-网站使用QQ登陆获取用户QQ信息 <br/>
+网站使用QQ登陆获取用户QQ信息 <br/> QQ实名验证的应用id(client_id) ->  accesss_token -> openid = 用户信息
 
 'https://graph.qq.com/oauth2.0/authorize?client_id=101490224&response_type=token&scope=all&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fhome'
 
@@ -13,7 +13,7 @@ https://graph.qq.com/user/get_user_info?access_token= (access token)  &oauth_con
 
 
 
-//前端代码示例  这个是只需要获取到access token就可以获取到登陆的QQ用户信息
+//前端代码示例  这个是只需要获取到access token就可以获取到登陆的QQ用户信息，上面需要自己获取，下面是QQjdk帮我们获取
 
 
 <!DOCTYPE html>
