@@ -1,0 +1,22 @@
+这里需要 实名验证的微信公众号appid和公众号允许的网址，白名单
+
+先要获取code
+ https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxdee946d29f511293&redirect_uri=http%3A%2F%2Fwx.huajvn.com%3A3000%2F520&response_type=code&scope=snsapi_base#wechat_redirect
+ <br/>
+ 然后根据redirect_uri设置的地址相对应路由来处理（注意redirect_uri设置的地址是需要这样encodeURIComponent('http://localhost:8000')编码过的地址）
+"520codestate"(req,response) {
+   var getJson = url.parse(req.url, true).query;
+ response.writeHead(200, {'Content-Type': 'text/txt;charset=utf8'});
+if(getJson.state&&getJson.code){
+  var DecoraQuotaDate = JSON.parse(getJson.state); 
+
+request('https://api.weixin.qq.com/sns/oauth2/access_token?appid=wxdee946d29f511293&secret=9cbc4b719d594051db61f37235d0e375&code='+getJson.code+'&grant_type=authorization_code',function(err,res,body){
+    if(err){ response.end(err);return; }
+        
+  /*var data = JSON.parse(body);
+  request.get('https://api.weixin.qq.com/cgi-bin/user/info?access_token='+token+'&openid='+data['openid']+'&lang=zh_CN',function(err,r,body){
+	  var username = JSON.parse(body).nickname;
+	  data.content = '欢迎'+username+',请开始你的操作';
+	  msgText(res,data);
+	  msgText = null;
+  });*/
