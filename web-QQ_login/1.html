@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>qq_connect login demo</title>
+
+
+<body>
+<img id="custom_button" src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1541738982&di=e0fa85ac224ea98330e817f4df7abf96&src=http://www.geren-jianli.net/upload/2/86/28678da89bf0de60f7341597e6943703.jpg">
+
+
+<div id="modal" style="position: absolute; visibility: hidden; width: 750px; height: 500px; top: 30px; border: 1px solid rgb(238, 238, 238); overflow: hidden; background: white; left: 48.5px;">
+
+<div style="background:#51b7ec; height: 30px; line-height: 30px; width:100%; position: absolute;z-index: 60; text-align: right;">
+
+<span id="close_btn" style="cursor: pointer;">关闭</span>
+
+</div>
+
+<iframe id="login" frameborder="0" width="100%" height="500" style="margin-top: 25px" ">
+
+</iframe>
+
+</div>
+
+
+<span id="a" style="display:none"> </span>
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script src="http://connect.qq.com/qc_jssdk.js" data-appid="101490224"
+        data-redirecturi="http://localhost:3000/proxy"" charset="utf-8"></script>
+<script>
+function toHome(access_token){
+  alert(access_token);
+    location.href="http://xiaoben.ngrok.xiaomiqiu.cn/" + access_token + "#access_token=" + access_token
+}
+
+$(function () {
+
+    var $iframe = $('#login')
+    var modal = $('#modal')[0]
+
+    $("#custom_button").on('click', function () {
+        if ($iframe.prop('src') === "") {
+            var url = "https://graph.qq.com/oauth2.0/authorize"
+            var params = "?"
+            params += "response_type=token&"  
+            params += "client_id=101490224&" 
+            
+            params += "redirect_uri=http://localhost:3000/proxy"
+            $iframe.prop("src", url + params)
+        }
+        modal.style.left = ((window.innerWidth / 2) - 350) + "px"
+        modal.style.visibility = 'visible'
+    })
+
+    $("#close_btn").on('click', function () {
+        modal.style.visibility = 'hidden'
+    })
+	
+	 QC.Login(               
+        {btnId:'a'},
+        function (reqData, opts) {
+		$("#custom_button").css('display','none');
+		
+		$("#a").css('display','block');
+          
+            var dom = document.getElementById(opts['btnId']),
+                _logoutTemplate=[
+              
+                    '<span><img src="{figureurl}" class="{size_key}"/></span>',
+               
+                    '<span>{nickname}</span>',
+              
+                    '<span><a href="javascript:QC.Login.signOut();" onclick="quit()">退出</a></span>'
+                ].join("");
+            dom && (dom.innerHTML = QC.String.format(_logoutTemplate, {
+                nickname : QC.String.escHTML(reqData.nickname), 
+                figureurl : reqData.figureurl
+            }));
+			console.log(reqData)
+        },
+        function (opts) {
+            console.log('QQ登录 注销成功 !')
+        }
+    )
+	
+
+	
+})
+ 	function quit(){
+	   window.location.href="http://xiaoben.ngrok.xiaomiqiu.cn/";
+	}
+</script>
+</body>
+
+
+
+
+</html>
+
