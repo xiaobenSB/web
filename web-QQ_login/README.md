@@ -11,24 +11,14 @@ https://graph.qq.com/oauth2.0/me?access_token=获取到的access token    //这�
 https://graph.qq.com/user/get_user_info?access_token= (access token)  &oauth_consumer_key= (client_id) &openid= (openid) //这样就可以获取到该网站登陆QQ的用户信息
 
 
+<br />
 
+//这个是只需要获取到access token就可以获取到登陆的QQ用户信息，上面需要自己获取，下面是QQjdk帮我们获取,并且获取到过access token一次后，就会保存到cookie里，下次QQjsjdk就可以从cookie获取了
+<br />
 
-//前端代码示例  这个是只需要获取到access token就可以获取到登陆的QQ用户信息，上面需要自己获取，下面是QQjdk帮我们获取
-
-
-<!DOCTYPE html>
-<html>
-<head><title>qq_connect login demo</title>
-
-
-<body>
-
-<span id="a"> </span>
-<script src="http://localhost:3000/static/js/jquery.min.js"></script>
 <script src="http://connect.qq.com/qc_jssdk.js" data-appid="101490224" data-redirecturi="http://localhost:3000/home" charset="utf-8"></script>  <!--QQjssdk-->
-<script>
-$(function () {
 
+<br />
     // jssdk初始化时会从url的hash里获取access_token，http://localhost:3000/home/params?#access_token=xxx
     // 或者直接把access_token传入进行初始化{btnId:'login-btn', access_token:'xxx'}
     QC.Login(   //qq登陆jssdk 
@@ -63,10 +53,4 @@ $(function () {
    
 })
 </script>
-</body>
-
-
-
-
-</html>
 
