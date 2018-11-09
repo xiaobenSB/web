@@ -34,8 +34,8 @@ alert(11);
 
 <script>
 
- window.opener.location.reload();   //打开该页面的页面刷新
-self.close();  //当前页面关闭
+ window.opener.location.reload();   //打开该页面的页面刷新,必须是window.open打开的该页面
+self.close();  //当前页面关闭，同样必须是window.open打开的该页面
 </script>
 
 <
