@@ -1,3 +1,6 @@
+<h1>window.top.toHome（）当前是ifarme容器然后执行该代码，转义为：window.top === ifarme的所在window（就是ifarme标签指向的window,不是ifarme里面的window）,toHome是里面的方法</h1>
+
+
 网站使用QQ登陆获取用户QQ信息 <br/> QQ实名验证的应用id(client_id) ->  accesss_token -> openid = 用户信息
 
 'https://graph.qq.com/oauth2.0/authorize?client_id=101490224&response_type=token&scope=all&redirect_uri=http%3A%2F%2Flocalhost%3A3000%2Fhome'  //这个接口可以调用qq需要登陆界面
