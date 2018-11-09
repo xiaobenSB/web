@@ -1,1 +1,48 @@
+<html>
+<head>
+<script type="text/javascript">
+function open_win() 
+{
+window.open("http://localhost:3000/proxy?")     //两个页面必须是在同个服务器里的，并且只能用window.open打开，因为才能对应window.opener
+}
+alert(11);
+</script>
+</head>
+
+<body>
+<form>
+<input type=button value="打开新页面" onclick="open_win()">
+</form>
+</body>
+
+</html>
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head><title>qq_connect login demo</title>
+
+
+<body>
+
+<h1>
+新页面
+</h1>
+
+
+<script>
+
+ window.opener.location.reload();   //打开该页面的页面刷新
+self.close();  //当前页面关闭
+</script>
+
+<
+</body>
+
+
+
+
+</html>
 
