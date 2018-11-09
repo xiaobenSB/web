@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+<html>
+<head><title>qq_connect login demo</title>
+
+
+<body>
+
+<h1>
+登陆跳转中
+</h1>
+<div id="login_container">
+
+</div>
+
+
+<script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script> //微信二维码扫码登陆jdk
+
+<script>
+ /*var obj = new WxLogin({  //二维码生成
+ self_redirect:true,
+ id:"login_container", 
+ appid: "wx4c2577cc73e73a4c",  //用了虎牙的测试
+ scope: "snsapi_login", 
+ redirect_uri: "https%3A%2F%2Fudb3lgn.huya.com%2Fweb%2Fv2%2Fcallback%3Fstate%3D%257B%2522action%2522%253A%25221%2522%252C%2522appid%2522%253A%25225002%2522%252C%2522busiurl%2522%253A%2522https%253A%252F%252Fwww.huya.com%2522%252C%2522byPass%2522%253A3%252C%2522domain%2522%253A%2522huya.com%2522%252C%2522domainList%2522%253A%2522%2522%252C%2522exchange%2522%253A%252255571601%2522%252C%2522remember%2522%253A0%252C%2522requestId%2522%253A%252256138343%2522%252C%2522style%2522%253A%25221%2522%252C%2522terminal%2522%253A%2522web%2522%252C%2522type%2522%253A%2522wx%2522%252C%2522uri%2522%253A30003%252C%2522win%2522%253A%25221%2522%257D",
+  state: "123",
+ style: "while",
+ href: ""
+ });
+  */
+
+</script>
+
+<script>
+/*if(window.top.toHome === undefined){   //防止点击退出按钮，然后使用qqjsjdk的QQ登陆按钮方法
+var access_token = getQueryVariable('access_token');
+   location.href="http://localhost:3000/" + access_token + "#access_token=" + access_token
+};  */
+window.top.toHome(getQueryVariable('access_token'))
+
+function getQueryVariable(variable) {
+    // 返回的access_token是放在hash里面的
+    let query = window.location.hash.substring(1);
+
+    let vars = query.split("&");
+    for (let i=0;i<vars.length;i++) {
+        let pair = vars[i].split("=");
+        if(pair[0] === variable){return pair[1];}
+    }
+    return(false);
+	
+}
+
+</script>
+</body>
+
+
+
+
+</html>
+
