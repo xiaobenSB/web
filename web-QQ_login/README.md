@@ -1,4 +1,4 @@
-<h1>window.top.toHome（）当前是ifarme容器然后执行该代码，转义为：window.top === ifarme的所在window（就是ifarme标签指向的window,不是ifarme里面的window）,toHome是里面的方法</h1>
+<h2>window.top.toHome（）当前是ifarme容器然后执行该代码，转义为：window.top === ifarme的所在window（就是ifarme标签指向的window,不是ifarme里面的window）,toHome是里面的方法</h2>
 
 
 网站使用QQ登陆获取用户QQ信息 <br/> QQ实名验证的应用id(client_id) ->  accesss_token -> openid = 用户信息
