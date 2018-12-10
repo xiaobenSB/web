@@ -21,7 +21,7 @@
                 let video = document.querySelector('.video')
                 const xhr = new XMLHttpRequest()
                 xhr.open('post', '/b', true)
-                // 请求类型 bufffer
+                // 请求类型 bufffer，这个很关键，他会把你返回的数据生成arraybuffer（类型化数组）
                 xhr.responseType = 'arraybuffer'
                 xhr.onload = function () {
                     if (xhr.status === 200 || xhr.status === 304) {
