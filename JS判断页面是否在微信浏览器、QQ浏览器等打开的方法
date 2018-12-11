@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+ 
+	<head>
+		<meta charset="UTF-8">
+	<style>
+               *{margin:0;padding:0;}
+             </style>
+ 
+	</head>
+ 
+	<body>
+		<div style="margin-top:200px;width:100%;text-align:center">
+                                 <p id="app" style="font-size:40px;font-weight:bold">提示：手机自带的浏览器没有提示
+
+下载确定，在电脑浏览器上打开才会提示</p>
+                                 <button id="btn" type="button" onclick="loadXMLDoc()" 
+
+style="display:block;margin:10px auto;width:50%;height:300px;font-size:50px;font-weight:bold">获取app</button>
+                                 <p id="app" style="margin-top:100px;font-size:40px;font-weight:bold"></p>
+                           </div>
+
+<script>
+function loadXMLDoc(){
+
+var browser = { 
+versions: function () { 
+var u = navigator.userAgent, app = navigator.appVersion; 
+return { //移动终端浏览器版本信息 
+trident: u.indexOf('Trident') > -1, //IE内核 
+presto: u.indexOf('Presto') > -1, //opera内核 
+webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核 
+gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核 
+mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端 
+ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端 
+android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或uc浏览器 
+iPhone: u.indexOf('iPhone') > -1, //是否为iPhone或者QQHD浏览器 
+iPad: u.indexOf('iPad') > -1, //是否iPad 
+webApp: u.indexOf('Safari') == -1 //是否web应该程序,没有头部与底部 
+}; 
+}(), 
+language: (navigator.browserLanguage || navigator.language).toLowerCase() 
+} 
+
+
+if (browser.versions.mobile) {//判断是否是移动设备打开。browser代码在下面 
+var ua = navigator.userAgent.toLowerCase();//获取判断用的对象 
+if (ua.match(/MicroMessenger/i) == "micromessenger") { 
+   alert('请别在微信自带浏览器打开，请在其他浏览器上打开');
+document.getElementById("app").innerHTML='APP下载地址为： http://huajvn.com:3000/xiaobenApp/xiazai';
+return;
+} 
+if (ua.match(/WeiBo/i) == "weibo") { 
+alert('请别在新浪微博客户端浏览器打开，请在其他浏览器上打开');
+document.getElementById("app").innerHTML='APP下载地址为： http://huajvn.com:3000/xiaobenApp/xiazai';
+return;
+} 
+if (ua.match(/QQ/i) == "qq") { 
+alert('请别在QQ自带浏览器打开，请在其他浏览器上打开');
+document.getElementById("app").innerHTML='APP下载地址为： http://huajvn.com:3000/xiaobenApp/xiazai';
+return;
+} 
+/*if (browser.versions.ios) {   //是否在IOS浏览器打开
+alert('请在网页上打开')
+} 
+if(browser.versions.android){ //是否在android浏览器打开
+alert('请在网页上打开')
+} */
+document.getElementById("btn").innerHTML='app正在获取中......';
+	
+window.location.href = 'http://huajvn.com:3000/xiaobenApp/xiazai'
+} else { 
+
+document.getElementById("btn").innerHTML='app正在获取中......';
+	
+window.location.href = 'http://huajvn.com:3000/xiaobenApp/xiazai'
+
+} 
+
+
+}
+
+
+</script>
+	</body>
+ 
+</html>
