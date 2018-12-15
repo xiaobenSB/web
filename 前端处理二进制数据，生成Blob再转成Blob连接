@@ -51,13 +51,17 @@
 
 后台：
   b(req,res){
-      fs.readFile(__dirname + '../../../1.mp4', function (err, data) {  //data为buffter数据
-          if (err) {
-              console.log(err.stack);
-              return;
-          }
-          res.write(data); res.end();
-      })
+          fs.readFile(__dirname + '../../../1.mp4', function (err, data) {  //data为buffter数据
+            if (err) {
+                console.log(err.stack);
+                return;
+            }
+		  res.end(data.toString('latin1'),'latin1');//第二设置为什么什么编码类型的Buffer
+        
+         //node里如果你end是字符串他会先转出buffer在解成字符串，如果是buffer就不会转，会根据是什么buffer在转出相对的字符串
+
+         
+        })
 
   }
   
