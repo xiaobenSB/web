@@ -2,6 +2,8 @@
 
 移动端框架 SUI Mobile      地址： http://m.sui.taobao.org/
 
+微信小程序框架 Touch wx    地址： http://www.wetouch.net/touchwx_doc/
+
 前端的一些知识
 
 background: url(http://xxxxx) no-repeat 80%/50%;  (80%这个是配合50%的，如果是50%，那么图片宽高会相对所装盒子自身的50%大小，而这时的80%因为图片是50%没有装满盒子，那么剩下的宽度空间就(100%)会用来判断这个80%,80%就图片左边占剩余空间80%，右边20%，没有剩余空间的话这个设置就无效)
