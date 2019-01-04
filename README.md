@@ -1,5 +1,7 @@
 # web
 
+<img src="" />
+
 移动端框架 SUI Mobile      地址： http://m.sui.taobao.org/
 
 微信小程序框架 Touch wx    地址： http://www.wetouch.net/touchwx_doc/
