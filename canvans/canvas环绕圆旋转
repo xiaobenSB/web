@@ -20,7 +20,7 @@ ctx.stroke();
 ctx.closePath();
 
 
-ctx.save();
+ctx.save();   //如果不保存这次的绘图路径（x.y），那么下面的ctx.translate会扰乱绘图路径，那么下次执行ctx.clearRect时是从扰乱的绘图路径开始计算
 
 
 
