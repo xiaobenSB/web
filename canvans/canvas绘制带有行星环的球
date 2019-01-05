@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>菜鸟教程(runoob.com)</title>
+</head>
+<body>
+
+<canvas id="myCanvas" width="300" height="150" style="border:1px solid #d3d3d3;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+ctx.save()
+ctx.beginPath();
+ctx.arc(155,70,70,0,2*Math.PI);
+ctx.shadowBlur=10;
+ctx.shadowColor="blue";
+ctx.fillStyle="black";
+ctx.fill();
+ctx.stroke();
+
+ctx.beginPath();
+ctx.moveTo(60,60);
+ctx.bezierCurveTo(60,100,250,100,250,60);
+ctx.strokeStyle="blue";
+ctx.stroke();	
+	
+ctx.beginPath();
+ctx.moveTo(60,60);
+ctx.bezierCurveTo(60,20,250,20,250,60);	
+ctx.stroke();
+	
+ctx.beginPath();
+ctx.moveTo(60,80);
+ctx.bezierCurveTo(60,120,250,120,250,80);
+ctx.stroke();	
+
+
+ctx.beginPath();
+ctx.moveTo(60,80);
+ctx.bezierCurveTo(60,40,250,40,250,80);
+ctx.stroke();
+	
+ctx.restore();
+	
+
+ctx.font="16px Arial";
+var gradient=ctx.createLinearGradient(0,0,c.width,0);
+gradient.addColorStop("0","magenta");
+gradient.addColorStop("0.5","blue");
+gradient.addColorStop("1.0","red");
+// 渐变填充
+ctx.strokeStyle=gradient;
+ctx.strokeText("球球",37,80);
+	
+ctx.strokeText("球球",190,80);
+	
+
+
+</script> 
+
+</body>
+</html>
