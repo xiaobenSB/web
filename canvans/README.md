@@ -5,3 +5,7 @@
 <br/>
 <h4>canvas里的rotate用法</h4>
 <img src="../2.png" />
+<br/>
+<h4>带有行星环的球</h4>
+<img src="./canvas.png" />
+
