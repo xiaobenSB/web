@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<title>菜鸟教程(runoob.com)</title> 
+</head>
+<body>
+
+<canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;">
+您的浏览器不支持 HTML5 canvas 标签。
+</canvas>
+<script>
+	
+var c=document.getElementById("myCanvas");
+var ctx=c.getContext("2d");
+
+var a = [21];
+var sn = [-1,-20,1,20];
+var d = 1;
+var n = 1;
+var food = 25;
+	
+	document.onkeydown = function(evt) { 
+         //当键盘上下左右键摁下的时候改变direction
+  d = -n == (d=sn[(evt || event).keyCode - 37]) ? n : n = d;   // 加括号是让他先执行括号里的（d先存当前按下键对应值），防止 == d，然后保错
+  
+ // 当 n =20（下）时 这时按下的键为-20（上）时，取 20，防止上下键冲突 
+  };
+
+	
+	function draw(t){
+	  a.unshift(t+d)
+	 ctx.fillStyle = 'black';
+	  ctx.fillRect(t%20*20,~~(t/20)*20,18,18);
+	 if(t===food){
+	 while (a.indexOf(food = ~~(Math.random() * 400)) > 0);   //400内的随机数（x等同于width宽）
+	 ctx.fillStyle = 'red';
+     ctx.fillRect(food%20*20,~~(food/20)*20,18,18);
+	 }
+	  setTimeout(()=>draw(a[0]),500);
+	}
+//draw(a[0])
+
+	
+</script>
+</body>
+</html>
