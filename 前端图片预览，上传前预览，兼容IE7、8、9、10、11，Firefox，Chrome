@@ -43,11 +43,10 @@ alert(1);
                 //dataURL = $file.val();
  
                 // $img.css("filter",'progid:DXImageTransform.Microsoft.AlphaImageLoader(sizingMethod = scale,src="' 
-
-+ dataURL + '")')                // var imgObj = document.getElementById("preview");
+  //+ dataURL + '")')                // var imgObj = document.getElementById("preview");
                  // imgObj.style.filter = "progid:DXImageTransform.Microsoft.AlphaImageLoader
 
-(sizingMethod=scale,src=\"" + dataURL + "\")";
+//(sizingMethod=scale,src=\"" + dataURL + "\")";
                // imgObj.style.width = "48px";
                 // imgObj.style.height = "48px";
 
