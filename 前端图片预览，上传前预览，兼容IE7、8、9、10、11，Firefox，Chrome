@@ -30,7 +30,7 @@ alert(1);
             if(fileObj && fileObj.files && fileObj.files[0]){
                 dataURL = windowURL.createObjectURL(fileObj.files[0]);
  var eleLink = document.createElement('a');
- eleLink.download = '下载时的文件名'；
+ eleLink.download = '下载时的文件名';
  eleLink.href =  dataURL;
  eleLink.innerHTML='www'
  eleLink.click()；
