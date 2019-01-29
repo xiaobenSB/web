@@ -33,7 +33,7 @@ alert(1);
  eleLink.download = '下载时的文件名';
  eleLink.href =  dataURL;
  eleLink.innerHTML='www'
- eleLink.click()；
+ eleLink.click();
     document.body.appendChild(eleLink);
 
                $img.attr('src',dataURL);
