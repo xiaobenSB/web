@@ -1,6 +1,26 @@
 # web
 
-<img src="" />
+推荐用bootstaps做响应式官网展示（搭建快）
+
+下面为bootstaps响应式的优点
+/*
+   *   bootstaps使用的.col-对应的是媒体查询，作用是当屏幕（@media (min-width:992px)）小于992px时，该媒体查询设置不生效
+   *   该方式布局有个好处：当媒体查询失效时，原本使用媒体查询 的标签就会独占一行，因为他原本就是块级元素
+   *   因为只有媒体查询才有： float:left; width:xx%;   设置
+ *
+ *  .col-xs-这个没有设置媒体查询，是设置在class，(媒体查询生效清空下)说明了媒体查询的样式级别低，class再到媒体查询，所以媒体查询会覆盖掉class,
+   *       所以设置.col-xs-就代表要永远使用：width:xx%;和float:left;了，因为不会失效
+ *  .col-xs-    为：  超小屏幕(手机)    < 768px 时就会触发                
+ *  .col-sm-    为：  小屏幕(平板)        >=768px 时就会触发                                     @media (min-width: 768px)   
+ *  .col-md-    为：  中等屏幕(桌面显示器)        >=992px 时就会触发                 @media (min-width:992px)
+ *  .col-lg-    为：  大屏幕(大桌面显示器)        >=1200px 时就会触发               
+ *
+   *      上面的.col-    都设置了： position:relative;  min-height:1px; padding-right和left:  15px;  
+   *       一般情况下，我们如果要适应手机，电脑布局的话只需要上面三种   .col-xs-   .col-sm-   .col-md-
+   *       因为   .col-md-和.col-lg-有冲突，一个大于或等于992，一个是大于或等于1200 ，当屏幕大于991时，两个对应的媒体查询都能生效
+   *       不过需要注意:      当屏幕大于1199时，   .col-lg-生效  .col-md-不生效，说明了991的优先级高，1199的优先级低
+ */
+
 
 移动端框架 SUI Mobile      地址： http://m.sui.taobao.org/
 
