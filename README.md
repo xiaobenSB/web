@@ -1,8 +1,8 @@
 # web
 
 推荐用bootstaps做响应式官网展示（搭建快）
-
-下面为bootstaps响应式的优点
+可以参考: https://v3.bootcss.com/getting-started/    该链接页面最下面有案例
+下面为bootstaps响应式的优点  
 /*
    *   bootstaps使用的.col-对应的是媒体查询，作用是当屏幕（@media (min-width:992px)）小于992px时，该媒体查询设置不生效
    *   该方式布局有个好处：当媒体查询失效时，原本使用媒体查询 的标签就会独占一行，因为他原本就是块级元素
