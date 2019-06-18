@@ -32,8 +32,9 @@
 
 前端的一些知识
 
-正则表达式:  var a = "wopl";a.match(/(wo)/);  //["wo", "wo", index: 0, input: "wopl"]
-            a.match(/(wo)/g);  //["wo"], 所以加g好点
+正则表达式:  var a = "wopl";a.match(/(wo)/);  //["wo", "wo", index: 0, input: "wopl"]  <br/>
+            a.match(/(wo)/g);  //["wo"], 所以加g好点    <br/>
+     不过注意：var a = "woplwopewo";a.match(/(wo)+/g);  //["wo","wo","wo"] <br/>
 
 background: url(http://xxxxx) no-repeat 80%/50%;  (80%这个是配合50%的，如果是50%，那么图片宽高会相对所装盒子自身的50%大小，而这时的80%因为图片是50%没有装满盒子，那么剩下的宽度空间就(100%)会用来判断这个80%,80%就图片左边占剩余空间80%，右边20%，没有剩余空间的话这个设置就无效)
 
