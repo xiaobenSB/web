@@ -32,6 +32,9 @@
 
 前端的一些知识
 
+正则表达式:  var a = "wopl";a.match(/(wo)/);  //["wo", "wo", index: 0, input: "wopl"]
+            a.match(/(wo)/g);  //["wo"], 所以加g好点
+
 background: url(http://xxxxx) no-repeat 80%/50%;  (80%这个是配合50%的，如果是50%，那么图片宽高会相对所装盒子自身的50%大小，而这时的80%因为图片是50%没有装满盒子，那么剩下的宽度空间就(100%)会用来判断这个80%,80%就图片左边占剩余空间80%，右边20%，没有剩余空间的话这个设置就无效)
 
 使用dispaly:flex布局时，如果你使用align-items: center这个样式时（子集节点从父级y轴的中心排列），如果子集节点的高度不一致，那么他们的top会不一致，因为这个css3是确保子集的y轴中心对准父级的y轴中心的，所以我们如果想子集的top对齐时，不能设置这个.我们可以设置 justify-content: space-between;把子集依次排列，然后使用padding(或者只设置padding-top和bottom),让他们有类似于居中的效果
