@@ -7,7 +7,12 @@
    *   bootstaps使用的.col-对应的是媒体查询，作用是当屏幕（@media (min-width:992px)）小于992px时，该媒体查询设置不生效
    *   该方式布局有个好处：当媒体查询失效时，原本使用媒体查询 的标签就会独占一行，因为他原本就是块级元素
    *   因为只有媒体查询才有： float:left; width:xx%;   设置
- *
+   *
+   *   最外层可以设置(.container-fluid和.container)class样式
+   *   .container-fluid 为window宽度的100%，但有padding-left padding-right
+   *   .container 限制了最大宽度为 width: 1170px;
+   *   .jumbotron 是依赖于上面两个class的
+   *
  *  .col-xs-这个没有设置媒体查询，是设置在class，(媒体查询生效清空下)说明了媒体查询的样式级别低，class再到媒体查询，所以媒体查询会覆盖掉class,
    *       所以设置.col-xs-就代表要永远使用：width:xx%;和float:left;了，因为不会失效
  *  .col-xs-    为：  超小屏幕(手机)    < 768px 时就会触发                
