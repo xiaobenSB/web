@@ -37,6 +37,18 @@
 
 前端的一些知识
 
+css中的 inherit关键字（如width: inherit;color: inherit;）
+        使用了这个关键字的dom代表它要从父dom继承对应的值
+        例子: <div style="width:70%"> <div style="width:inherit"></div> </div>
+        上面div的width为70%,它的子dom因为在width中使用inherit关键字，所有它的子dom的width为70%
+        
+当我们使用 图片然后旁边加文字这种布局时，文字和图片可能不是从父dom的top开始排列
+          所以我们需要使用:  vertical-align:top（行内元素才有用，因为我们图片加文字布局是并排的，正好是行内元素）
+          例子: <div>
+                   <img src="/i/eg_tulip.jpg"  alt="上海鲜花港 - 郁金香" />
+                   <span style="vertical-align:top">222</span>
+                </div>
+
 正则表达式:  var a = "wopl";a.match(/(wo)/);  //["wo", "wo", index: 0, input: "wopl"]  <br/>
             a.match(/(wo)/g);  //["wo"], 所以加g好点    <br/>
      不过注意：var a = "woplwopewo";a.match(/(wo)+/g);  //["wo","wo","wo"] <br/>
