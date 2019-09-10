@@ -1,0 +1,66 @@
+function a(){
+    this.node = {
+        data: null,
+        left: null,
+        right: null
+    };
+}
+
+a.prototype.insterTwo = function(val){
+    this.inster(this.node,val);
+};
+
+a.prototype.inster = function(node,val){
+   var that = this;
+
+       if(node.data){
+          if(node.data > val){
+              if(node.left == null){
+                      node.left = {
+                            data: null,
+                            left: null,
+                            right: null
+                          };
+               };
+              that.inster(node.left,val); 
+           }else{
+              if(node.right == null){
+                      node.right = {
+                            data: null,
+                            left: null,
+                            right: null
+                           };
+              };
+              that.inster(node.right,val); 
+           };
+       }else{
+          node.data = val;
+       };
+};
+
+a.prototype.find = function(val){
+  var node = this.node;
+  var flag = true;
+  while(flag){
+   console.log(node);
+   if(node){
+        if(node.data > val){
+           node = node.left;
+        }else if(node.data < val){
+           node = node.right;
+        }else{
+          console.log('找到:' + val + '了');
+          console.log(node);
+          flag = false;
+        }; 
+   }else{
+       console.log('未找到');flag = false;
+     };    
+   };
+};
+
+a.prototype.consoleLog = function(){
+   console.log(this.node);
+}
+
+var A = new a();A.insterTwo(1);A.insterTwo(10);A.insterTwo(8);A.insterTwo(28);A.find(10);A.consoleLog();
